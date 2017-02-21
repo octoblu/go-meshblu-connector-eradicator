@@ -12,3 +12,4 @@ deploy:
   file: dist/meshblu-connector-eradicator-windows-amd64.exe
   on:
     repo: octoblu/go-meshblu-connector-eradicator
+    tags: true
