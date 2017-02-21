@@ -1,0 +1,11 @@
+language: go
+go: '1.8'
+install: true
+script: "./build windows"
+deploy:
+  provider: releases
+  api_key:
+    secure: t/B8aGHUZbrGR05nmtaSijUTs1kPjG/dJdmpvViN2HGx4lueNSRSAx8BBmWVyY1CX/3y4Z6ISpWiaBNFkLN0USSB6f4g21I0jrjclYpmUtyV1BmqrJPrck58hT1c7afMBeC4d8EbNUj+4RoBzMY9QWZz1lH5jUtQj4j4eg1jNQJ87INr7oOc/VuJoeZQ4LfjAZ4wNrifcADZT43k0r9Cmqmr/wRfWKpvXfhdvfnmULJWQPTFzfD9QBn0MB//oauyPZ788rmf0CMuoHoxYL3Ah58nvTptD5mRj1LqmQ0VA1VRQCnO4IttAG/gi/JDpA6DJtYE7rdF4KfAbowtfcX5km2BDdoZfvNap6Mcewnp4sf72mJBFbDzwXqP3qf3PYBYIdj9XnGb+FRBzSQSMIxD3I1D7hLcBH18lRWU1trKWVjtEvQYX2k0OL6m+5dB1yYlKVr3DIU97CWAqqM/TwtnmsU/54oUxkpz5CvpVk9Gtr/vzsBBzkPL7VLcTZBAqWD5cWRBnGLp83ovEab9ICbWk2F5q+Nn3fgfsi81M7SV2bmzwJxFATVSzAxaCAOhIopiUbKnx+Ic0uYn+ZfutjCrtE/9rCnl4vboafaFenu+/Y46NKGtOxzYg99Y5o71Jz+cErwe86EHt1JkQWJTX38D5slacOiDfehjMICmgAvbCZw=
+  file: dist/meshblu-connector-eradicator-windows-amd64.exe
+  on:
+    repo: octoblu/go-meshblu-connector-eradicator

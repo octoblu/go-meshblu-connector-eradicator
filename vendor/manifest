@@ -27,6 +27,51 @@
 			"notests": true
 		},
 		{
+			"importpath": "github.com/octoblu/go-meshblu-connector-service/manage",
+			"repository": "https://github.com/octoblu/go-meshblu-connector-service",
+			"vcs": "git",
+			"revision": "9e20460add8d13729a03c7f10da611759536ebbb",
+			"branch": "master",
+			"path": "/manage",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/octoblu/go-meshblu-connector-service/vendor/github.com/kardianos/osext",
+			"repository": "https://github.com/octoblu/go-meshblu-connector-service",
+			"vcs": "git",
+			"revision": "2ca1d37e2dae49e07a6ca0fa6f0c9ff7b18dab1d",
+			"branch": "master",
+			"path": "vendor/github.com/kardianos/osext",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/octoblu/go-meshblu-connector-service/vendor/github.com/kardianos/service",
+			"repository": "https://github.com/octoblu/go-meshblu-connector-service",
+			"vcs": "git",
+			"revision": "2ca1d37e2dae49e07a6ca0fa6f0c9ff7b18dab1d",
+			"branch": "master",
+			"path": "vendor/github.com/kardianos/service",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/octoblu/go-meshblu-connector-service/vendor/github.com/visionmedia/go-debug",
+			"repository": "https://github.com/octoblu/go-meshblu-connector-service",
+			"vcs": "git",
+			"revision": "2ca1d37e2dae49e07a6ca0fa6f0c9ff7b18dab1d",
+			"branch": "master",
+			"path": "vendor/github.com/visionmedia/go-debug",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/octoblu/go-meshblu-connector-service/vendor/golang.org/x/sys/windows",
+			"repository": "https://github.com/octoblu/go-meshblu-connector-service",
+			"vcs": "git",
+			"revision": "2ca1d37e2dae49e07a6ca0fa6f0c9ff7b18dab1d",
+			"branch": "master",
+			"path": "vendor/golang.org/x/sys/windows",
+			"notests": true
+		},
+		{
 			"importpath": "github.com/urfave/cli",
 			"repository": "https://github.com/urfave/cli",
 			"vcs": "git",

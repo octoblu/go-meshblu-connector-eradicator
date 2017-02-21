@@ -7,6 +7,7 @@ import (
 
 	"github.com/coreos/go-semver/semver"
 	"github.com/fatih/color"
+	"github.com/octoblu/go-meshblu-connector-service/manage"
 	"github.com/urfave/cli"
 	De "github.com/visionmedia/go-debug"
 )
@@ -35,7 +36,59 @@ func main() {
 
 func run(context *cli.Context) {
 	dryRun, localAppData := getOpts(context)
-	fmt.Println("dryRun:", dryRun, "localAppData:", localAppData)
+
+	uuids, err := manage.ListUserLogin(localAppData)
+	if err != nil {
+		log.Fatalln(err.Error())
+	}
+
+	if dryRun {
+		printDryRun(uuids)
+		os.Exit(0)
+	}
+
+	errChans := make([]chan error, len(uuids))
+
+	for i, uuid := range uuids {
+		errChans[i] = uninstall(localAppData, uuid)
+	}
+
+	allSuccessful := true
+
+	for _, errChan := range errChans {
+		err := <-errChan
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err.Error())
+			allSuccessful = false
+		}
+	}
+
+	if allSuccessful {
+		os.Exit(0)
+	}
+	os.Exit(1)
+}
+
+func printDryRun(uuids []string) {
+	for _, uuid := range uuids {
+		fmt.Println("UNINSTALL: ", uuid)
+	}
+}
+
+func uninstall(localAppData, uuid string) chan error {
+	debug("UNINSTALL: %v", uuid)
+
+	err := make(chan error)
+
+	go func() {
+		err <- manage.UninstallUserLogin(&manage.UninstallUserLoginOptions{
+			LocalAppData: localAppData,
+			UUID:         uuid,
+		})
+		debug("DONE: %v", uuid)
+	}()
+
+	return err
 }
 
 func getOpts(context *cli.Context) (bool, string) {

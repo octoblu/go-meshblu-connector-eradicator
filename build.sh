@@ -6,8 +6,13 @@ BUILD_DIR=$PWD/dist
 build_on_local() {
   local goos="$1"
   local goarch="$2"
+  local extension=""
 
-  env GOOS="$goos" GOARCH="$goarch" go build -a -tags netgo -installsuffix cgo -ldflags '-w' -o "${BUILD_DIR}/${APP_NAME}-${goos}-${goarch}" .
+  if [ "$goos" == "windows" ]; then
+    extension=".exe"
+  fi
+
+  env GOOS="$goos" GOARCH="$goarch" go build -a -tags netgo -installsuffix cgo -ldflags '-w' -o "${BUILD_DIR}/${APP_NAME}-${goos}-${goarch}${extension}" .
 }
 
 build_osx_on_local() {
