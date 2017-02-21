@@ -1,0 +1,8 @@
+.git
+meshblu-connector-eradicator
+entrypoint/meshblu-connector-eradicator
+go-meshblu-connector-eradicator
+entrypoint/go-meshblu-connector-eradicator
+build.sh
+cross-compile.sh
+README.md

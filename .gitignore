@@ -22,3 +22,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
+meshblu-connector-eradicator
+entrypoint/meshblu-connector-eradicator
+go-meshblu-connector-eradicator
+entrypoint/go-meshblu-connector-eradicator
+dist
