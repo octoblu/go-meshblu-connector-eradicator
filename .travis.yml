@@ -1,7 +1,10 @@
 language: go
 go: '1.8'
+branches:
+  only:
+  - "/^v[0-9]/"
 install: true
-script: "./build windows"
+script: "./build.sh windows"
 deploy:
   provider: releases
   api_key:
